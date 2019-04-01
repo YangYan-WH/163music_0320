@@ -1,7 +1,9 @@
 $(function () {
     $.get('./lyric.json').then(function (object) {
         // let lyric = object.lyric
-        let {lyric} = object //es6 解构语法
+        let {
+            lyric
+        } = object //es6 解构语法
         let array = lyric.split('\n')
         let regex = /^\[(.*)\](.*)/
         array = array.map(function (string) {
@@ -25,13 +27,22 @@ $(function () {
 
         })
 
-        // http://poo1ntq8u.bkt.clouddn.com/%E5%84%BF%E6%AD%8C.mp3
         let audio = document.createElement('audio')
         audio.src = 'http://poo1ntq8u.bkt.clouddn.com/%E5%84%BF%E6%AD%8C.mp3'
-        audio.oncanplay = function(){
-            console.log(1111)
+        document.querySelector('svg.icon-play').addEventListener('click', function (e) {
+            
             audio.play()
-            document.querySelector('.disc-container').addClass('playing')
-        }
+            document.querySelector('.disc-container').classList.add('playing')
+        })
+        document.querySelector('svg.icon-pause').addEventListener('click', function (e) {
+            
+            audio.pause()
+            document.querySelector('.disc-container').classList.remove('playing')
+        })
+        // audio.oncanplay = function(){
+        //     console.log(audio.play())
+        //     audio.play()
+        //     document.querySelector('.disc-container').classList.add('playing')
+        // }
     })
 })

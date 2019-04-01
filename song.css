@@ -25,6 +25,7 @@
 .disc-container{
     position: relative;
 }
+
 .disc-container > .point{
     width: 24vw;
     position: absolute;
@@ -35,6 +36,21 @@
     justify-content: center;
     align-items: center;
     margin-top: 14vw;
+}
+.disc-container > .disc >.icon{
+    position: absolute;
+    fill: white;
+    width: 10vw;
+    height: 10vw;
+    z-index: 1;
+   
+}
+
+.disc-container > .disc >.icon.icon-play{
+    display: block
+}
+.disc-container > .disc >.icon.icon-pause{
+    display: none;
 }
 .disc-container > .disc >.ring{
     width: 72vw;
@@ -47,12 +63,19 @@
 .disc-container.playing > .disc > .light{
     animation: circle 20s infinite linear;
 }
+.disc-container.playing >.disc > .icon.icon-play{
+    display: none;
+}
+.disc-container.playing >.disc >.icon.icon-pause{
+    display: block;
+}
+
 .song-description{
     flex-grow: 1;
     color: #a7a5a5;
     text-align: center;
     line-height: 2;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 .song-description > h1{
     color: #ffffff;
