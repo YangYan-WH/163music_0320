@@ -39,11 +39,10 @@
 }
 .disc-container > .disc >.icon{
     position: absolute;
-    fill: white;
-    width: 10vw;
-    height: 10vw;
+    fill: rgba(255, 255, 255, 0.7);
+    width: 15vw;
+    height: 15vw;
     z-index: 1;
-   
 }
 
 .disc-container > .disc >.icon.icon-play{

@@ -30,19 +30,14 @@ $(function () {
         let audio = document.createElement('audio')
         audio.src = 'http://poo1ntq8u.bkt.clouddn.com/%E5%84%BF%E6%AD%8C.mp3'
         document.querySelector('svg.icon-play').addEventListener('click', function (e) {
-            
             audio.play()
             document.querySelector('.disc-container').classList.add('playing')
+            
         })
         document.querySelector('svg.icon-pause').addEventListener('click', function (e) {
-            
             audio.pause()
             document.querySelector('.disc-container').classList.remove('playing')
         })
-        // audio.oncanplay = function(){
-        //     console.log(audio.play())
-        //     audio.play()
-        //     document.querySelector('.disc-container').classList.add('playing')
-        // }
+        
     })
 })
